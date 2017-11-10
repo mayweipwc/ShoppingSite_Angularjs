@@ -1,0 +1,128 @@
+﻿<div id="carousel-example-generic" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+    </ol>
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <!-- Item -->
+        <div class="item animated fadeInRight">
+            <img src="../img/slider1.jpg" alt="" class="img-responsive">
+            <div class="carousel-caption">
+                <h2 class="animated fadeInLeftBig">Lorem ipsum dolor sit amet</h2>
+                <p class="animated fadeInRightBig">Lorem ipsum dolor sit amet, <strong>consectetur adipiscing</strong> elit. Donec tristique est sit amet diam interdum semper. </p>
+                <a href="#" class="animated fadeInLeftBig btn btn-info btn-lg">Buy Now - $199</a>
+            </div>
+        </div>
+        <div class="item animated fadeInRight active">
+            <img src="../img/slider2.jpg" alt="" class="img-responsive">
+            <div class="carousel-caption">
+                <h2 class="animated fadeInLeftBig">Mauris semper tincidunt suscipit</h2>
+                <p class="animated fadeInRightBig">Donec tristique est sit amet diam interdum semper. Vestibulum <strong>condimentum ante urna</strong>, vel interdum odio accumsan id.</p>
+                <a href="#" class="animated fadeInLeftBig btn btn-info btn-lg">Buy Now - $299</a>
+            </div>
+        </div>
+        <div class="item animated fadeInRight">
+            <img src="../img/slider3.jpg" alt="" class="img-responsive">
+            <div class="carousel-caption">
+                <h2 class="animated fadeInLeftBig">Phasellus et nisi tincidunt</h2>
+                <p class="animated fadeInRightBig">Lorem <strong>ipsum dolor sit amet</strong>, consectetur adipiscing elit. Vestibulum condimentum ante urna, vel interdum odio accumsan id.</p>
+                <a href="#" class="animated fadeInLeftBig btn btn-info btn-lg">Buy Now - $479</a>
+            </div>
+        </div>
+    </div>
+    <!-- Controls -->
+    <span class="left carousel-control" data-target="#carousel-example-generic" data-slide="prev">
+        <span class="icon-prev"></span>
+    </span>
+    <span class="right carousel-control" data-target="#carousel-example-generic" data-slide="next">
+        <span class="icon-next"></span>
+    </span>
+</div>
+<div class="hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Catchy title -->
+                <h2>It<span class="color">'</span>s Lorem ipsum <span class="color">dolor</span> sit amet consectetur</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tristique est sit amet diam interdum semper. Vestibulum condimentum ante urna, vel interdum odio accumsan id.</p>
+            </div>
+        </div>
+        <div class="sep-bor"></div>
+    </div>
+</div>
+<div class="shop-items blocky">
+    <div class="modal fade in" id="shoppingcart" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Shopping Cart</h4>
+                </div>
+                <div class="modal-body">
+                    <!-- Items table -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in cartList">
+                                <td><a href="single-item.html">{{item.name}}</a></td>
+                                <td><input ng-model="item.qutity" type="number" min="1" /></td>
+                                <td>${{item.qutity*item.price}}</td>
+                                <td>
+                                    <span class="glyphicon glyphicon-trash" ng-click="removeItem($index)"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <th>Total</th>
+                                <th>${{totalPrice()}}</th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Continue Shopping</button>
+                    <button type="button" class="btn btn-info">Checkout</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12" ng-repeat="item in items">
+                <div class="item">
+                    <!-- Use the below link to put HOT icon -->
+                    <div class="item-icon"><span>HOT</span></div>
+                    <!-- Item image -->
+                    <div class="item-image">
+                        <img src={{item.imgurl}} class="img-responsive">
+                    </div>
+                    <!-- Item details -->
+                    <div class="item-details">
+                        <!-- Name -->
+                        <h5>{{item.name}}</h5>
+                        <div class="clearfix"></div>
+                        <!-- Para. Note more than 2 lines. -->
+                        <p data-toggle="tooltip" class="block-with-text" title={{item.description}}>{{item.description}}</p>
+                        <hr>
+                        <!-- Price -->
+                        <div class="item-price pull-left">{{item.price}}</div>
+                        <!-- Add to cart -->
+                        <div class="pull-right"><a class="btn btn-danger btn-sm" ng-click="addToCart(item)">Add to Cart</a></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
