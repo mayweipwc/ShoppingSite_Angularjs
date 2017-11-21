@@ -5,12 +5,12 @@ app.config(function ($routeProvider) {
             templateUrl: "Login.html",
             controller: "appController"
         })
-        .when("/index", {
+        .when("/", {
             templateUrl: "Index.html",
             controller: "appController"
         })
         .otherwise({
-            redirectTo: "/login"
+            redirectTo: "/"
          }
         )
         ;
