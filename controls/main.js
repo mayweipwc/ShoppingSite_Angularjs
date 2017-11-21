@@ -2,11 +2,11 @@ var app = angular.module("myApp", ["ngRoute", "ngCookies"]);
 app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
     $routeProvider
         .when("/login", {
-            templateUrl: "Login.html",
+            templateUrl: "../views/Login.html",
             controller: "appController"
         })
         .when("/", {
-            templateUrl: "Index.html",
+            templateUrl: "../views/Main.html",
             controller: "appController"
         })
         .otherwise({
@@ -16,5 +16,3 @@ app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProv
     $locationProvider.hashPrefix('');
 
 }]);
-
-
