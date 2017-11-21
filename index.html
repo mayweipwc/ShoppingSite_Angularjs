@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ShoppingSite</title>
+    <base href="views/Login.html"/>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/style.css" rel="stylesheet" />
+    <script src="../scripts/jquery-1.9.1.min.js"></script>
+    <script src="../scripts/bootstrap.min.js"></script>
+    <script src="../scripts/angular.js"></script>
+    <script src="../scripts/angular-cookies.js"></script>
+    <script src="../scripts/angular-route.js"></script>
+    <script src="../controls/main.js"></script>
+    <script src="../controls/index.js"></script>
+</head>
+<body ng-app="myApp">
+    <div class="header">
+        <div class="container">
+            <div class="flexBox">
+                <div class="brandName">OlsonKart</div>
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                Home<span class="caret"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Account<span class="caret"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Pages<span class="caret"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                Computers <span class="caret"></span>
+                            </a>
+                        </li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <select>
+                        <option>Home </option>
+                        <option>Account </option>
+                        <option>Pages </option>
+                        <option>Computers </option>
+                        <option>Contact </option>
+                    </select>
+                </div>
+                <div>
+                    <a class="btn btn-info" href="#!login" ng-hide="RequestVerificationToken">Login</a>
+                    <a class="btn btn-info" ng-click="Logout()" ng-show="RequestVerificationToken">Logout</a>
+                    <a class="btn btn-info">Signup</a>
+                    <span data-toggle="modal" class="btn btn-info" data-target="#shoppingcart"><i class="fa fa-shopping-cart"></i>{{cartList.length}} Items - ${{totalPrice()}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div ng-view></div>
+    <footer>
+        <div class="container footer">
+            <div class=" row">
+                <div class="col-md-4 col-xs-12">
+                    <h3>Oslon de'Techno</h3>
+                    <hr />
+                    <p>
+                        tewtwt s
+                        awoef l sfdlasjf lasf l sfdlas fla waefeasfcasfas sdfoaewrfesdf
+                        tewtwt sflasf awoef l sfdlasjf lasf l sfdlas fla waefeasfcasfas sdfoaewrfesdf
+                        tewtwt sflasf awoef l sfdlasjf lasf l sfdlas fla waefeasfcasfas sdfoaewrfesdf
+                        la waefeasfcasfas sdfoaewrfesdfflasf awoef l sfdlasjf lasf l sfdlas fla waefeasfcasfas sdfoaewrfesdf
+                        la waefeasfcasfas sdfoaewrfesdf
+                    </p>
+                    <div>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                        <a href="#"><i class="fa fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <h3>Categories</h3>
+                    <hr />
+                    <p>
+                        <a href="#">
+                            sfdlas fla waefeasfcasfas sdfoaewrfesdf
+                        </a>
+                    </p>
+                    <p>
+                        <a href="#">
+                            tewtwt sflasf awoef l sfdlasjf lasf l
+                        </a>
+                    </p>
+                    <p><a href="#">la waefeasfcasfas sdfoaewrfesdf</a></p>
+                    <p><a href="#">tewtwt sflasf awoef l sfdlasjf lasf l sfdlas fla waefea</a> </p>
+                    <p><a href="#">sfcasfas sdfoaewrfesdf</a></p>
+                    <p>
+                        <a href="#"> tewtwt sflasf awoef l sfdlasjf lasf l sfdlas fla waefeasf</a>
+                    </p>
+                </div>
+                <div class="col-md-4 col-xs-12">
+                    <h3>Get in Touch</h3>
+                    <hr />
+                    <div class="address">
+                        <p><i class="fa fa-home color contact-icon"></i> #12, Plot No.14, Raj Karmara Street, </p>
+                        <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 5th Stage, Koramangala, Madiwala,</p>
+                        <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Bangalore - 493922, Karananana.</p>
+                        <p><i class="fa fa-phone color contact-icon"></i> +94-948-323-5532</p>
+                        <p><i class="fa fa-envelope color contact-icon"></i> <a href="mailto:something@gmail.com">some.thing@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
