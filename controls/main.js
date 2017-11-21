@@ -1,17 +1,20 @@
-﻿var app = angular.module("myApp", ["ngRoute", "ngCookies"]);
-app.config(function ($routeProvider) {
+var app = angular.module("myApp", ["ngRoute", "ngCookies"]);
+app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
     $routeProvider
         .when("/login", {
-            templateUrl: "Login.html",
+            templateUrl: "login.html",
             controller: "appController"
         })
         .when("/", {
-            templateUrl: "Index.html",
+            templateUrl: "index.html",
             controller: "appController"
         })
         .otherwise({
             redirectTo: "/"
-         }
-        )
-        ;
-});
+        }
+        );
+    $locationProvider.hashPrefix('');
+
+}]);
+
+
