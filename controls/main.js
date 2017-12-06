@@ -79,6 +79,6 @@ app.controller("appController", function ($scope, $http, $location, $rootScope, 
         angular.element(document.body).append(flyer);
         y -= 40;
         x += 40;
-        flyer.animate({ top: y, left: x, opacity: 1 }, "slow","easeInSine").animate({ top: y - 40, left: x + 40, opacity: 0 }, "slow","easeOutSine", function () { this.remove(); });
+        flyer.animate({ top: y, left: x, opacity: 1 }, "slow").animate({ top: y - 40, left: x + 40, opacity: 0 }, "slow", function () { this.remove(); });
      }
 });
