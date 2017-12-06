@@ -481,14 +481,14 @@ footer {
     display:none;
 }
 .fadeIn {
-          -webkit-animation: fadein 2s linear 1 normal forwards;
+          -webkit-animation: fadein 1s linear 1 normal forwards;
       }
       @-webkit-keyframes fadein {
           0% {
               opacity: 0;
           }
 
-          50% {
+          30% {
               opacity: 1;
           }
 
