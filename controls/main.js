@@ -77,6 +77,6 @@ app.controller("appController", function ($scope, $http, $location, $rootScope, 
         var flyer = $("<div style='background:red;height: 20px; width: 20px; position: absolute; opacity: 0;border:1px solid white; color:white; font-weight:bold; text-align:center; border-radius:10px;'>1</div>");
         flyer.css({ "top": y, "left": x });
         angular.element(document.body).append(flyer);
-        flyer.addClass("fadeIn").animate({ top: "-=80", left: "+=80"}, 2000, function () { this.remove(); });
+        flyer.addClass("fadeIn").animate({ top: "-=80", left: "+=80"}, 1000, function () { this.remove(); });
      }
 });
