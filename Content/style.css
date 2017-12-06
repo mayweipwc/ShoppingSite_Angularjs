@@ -480,5 +480,20 @@ footer {
     opacity: 0.6;
     display:none;
 }
+.fadeIn {
+          -webkit-animation: fadein 2s linear 1 normal forwards;
+      }
+      @-webkit-keyframes fadein {
+          0% {
+              opacity: 0;
+          }
 
+          50% {
+              opacity: 1;
+          }
+
+          100% {
+              opacity: 0;
+          }
+      }
 
