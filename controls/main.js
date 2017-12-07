@@ -72,11 +72,30 @@ app.controller("appController", function ($scope, $http, $location, $rootScope, 
             temp = { 'name': item.name, 'qutity': 1, 'price': item.price };
             $rootScope.cartList.push(temp);
         }
-        var x =e.pageX;
-        var y =e.pageY;
-        var flyer = $("<div style='background:red;height: 20px; width: 20px; position: absolute; opacity: 0;border:1px solid white; color:white; font-weight:bold; text-align:center; border-radius:10px;'>1</div>");
+        //add animation
+        var x = e.pageX;
+        var y = e.pageY;
+        var flyer = $("<div style='background:red;height: 20px; width: 20px; position: absolute; opacity: 1;border:1px solid white; color:white; font-weight:bold; text-align:center; border-radius:10px;'>1</div>");
         flyer.css({ "top": y, "left": x });
         angular.element(document.body).append(flyer);
-        flyer.addClass("fadeIn").animate({ top: "-=80", left: "+=80"}, 1000, function () { this.remove(); });
+        //声明定时器运行次数
+        var n = 0;
+        //声明拓展倍数
+        var value = 100;
+        flyer.timer = setInterval(function () {
+            var A = 100;
+            var B = 1;
+            var timespand = 1000;
+            n++;
+            var x1 = (B * n) * Math.PI / 180;
+            var y1 = -A * x1 * x1;
+            flyer.css({ "top": y1 + y, "left": x1 * value + x });
+            if (n >= timespand / 20) {
+                clearInterval(flyer.timer);
+                //remove flyer;
+                angular.element(flyer).remove();
+            }
+        }, 20);
+        flyer.addClass("fadeIn");
      }
 });
